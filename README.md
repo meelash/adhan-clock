@@ -2,6 +2,8 @@
 
 A prayer-time clock on a Raspberry Pi Pico (RP2040) that shows the time, Hijri date and the day's prayer times on a 64×32 LED matrix, and plays the adhan from an SD card.
 
+**Website:** https://meelash.github.io/adhan-clock/ (parts list, wiring diagram, screenshots and setup guide)
+
 ## Download and flash
 
 Prebuilt firmware is on the [Releases](../../releases) page. No toolchain needed:
@@ -96,6 +98,13 @@ GitHub Actions ([`.github/workflows/build.yml`](.github/workflows/build.yml)) bu
 
 ```sh
 git tag v1.0 && git push origin v1.0
+```
+
+The website lives in `docs/` and is published by [`.github/workflows/pages.yml`](.github/workflows/pages.yml) on every push that changes it. After changing the UI or wiring, regenerate its images:
+
+```sh
+tools/screenshots/render.sh     # docs/screens/*.png, rendered from firmware/src/ui (needs cc + Python Pillow)
+python3 tools/wiring_diagram.py # docs/img/wiring.svg
 ```
 
 ## Design notes

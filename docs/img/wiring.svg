@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" width="1100" height="720" role="img" aria-labelledby="t d">
+<title id="t">Adhan Clock wiring</title>
+<desc id="d">Raspberry Pi Pico pinout. SD card: MOSI GP0, SCK GP14, MISO GP15, CS GP22, power from VBUS. GPS: TX to GP1, RX shares GP0. Pico-Audio: DIN GP19, BCK GP21, LRCK GP17, power from VSYS and 3V3. All other pins are used by the matrix carrier board.</desc>
+<rect x="525" y="58" width="50" height="22" rx="4" fill="#9aa3ad"/>
+<rect x="470" y="72" width="160" height="512" rx="8" fill="#17613f"/>
+<text x="550.0" y="50" fill="#7d8595" font-size="11" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="middle" font-weight="400" >USB</text>
+<text x="550.0" y="306.0" fill="#cfe9da" font-size="15" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="middle" font-weight="650" transform="rotate(-90 550.0 314.0)">Raspberry Pi Pico</text>
+<text x="550.0" y="326.0" fill="#8fbfa5" font-size="11" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="middle" font-weight="400" transform="rotate(-90 550.0 314.0)">top view</text>
+<rect x="474" y="94" width="12" height="12" rx="2" fill="#5aa9ff"/>
+<text x="492" y="104" fill="#e8e6df" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP0</text>
+<rect x="474" y="118" width="12" height="12" rx="2" fill="#f2b84b"/>
+<text x="492" y="128" fill="#e8e6df" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP1</text>
+<rect x="474" y="142" width="12" height="12" rx="2" fill="#3a4250"/>
+<text x="492" y="152" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GND</text>
+<rect x="474" y="166" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="492" y="176" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP2</text>
+<text x="460" y="176" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >R1</text>
+<rect x="474" y="190" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="492" y="200" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP3</text>
+<text x="460" y="200" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >G1</text>
+<rect x="474" y="214" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="492" y="224" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP4</text>
+<text x="460" y="224" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >B1</text>
+<rect x="474" y="238" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="492" y="248" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP5</text>
+<text x="460" y="248" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >R2</text>
+<rect x="474" y="262" width="12" height="12" rx="2" fill="#3a4250"/>
+<text x="492" y="272" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GND</text>
+<rect x="474" y="286" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="492" y="296" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP6</text>
+<text x="460" y="296" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >RTC SDA</text>
+<rect x="474" y="310" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="492" y="320" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP7</text>
+<text x="460" y="320" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >RTC SCL</text>
+<rect x="474" y="334" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="492" y="344" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP8</text>
+<text x="460" y="344" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >G2</text>
+<rect x="474" y="358" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="492" y="368" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP9</text>
+<text x="460" y="368" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >B2</text>
+<rect x="474" y="382" width="12" height="12" rx="2" fill="#3a4250"/>
+<text x="492" y="392" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GND</text>
+<rect x="474" y="406" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="492" y="416" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP10</text>
+<text x="460" y="416" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >A</text>
+<rect x="474" y="430" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="492" y="440" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP11</text>
+<text x="460" y="440" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >CLK</text>
+<rect x="474" y="454" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="492" y="464" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP12</text>
+<text x="460" y="464" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >LAT</text>
+<rect x="474" y="478" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="492" y="488" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP13</text>
+<text x="460" y="488" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >OE</text>
+<rect x="474" y="502" width="12" height="12" rx="2" fill="#3a4250"/>
+<text x="492" y="512" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GND</text>
+<rect x="474" y="526" width="12" height="12" rx="2" fill="#5aa9ff"/>
+<text x="492" y="536" fill="#e8e6df" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP14</text>
+<rect x="474" y="550" width="12" height="12" rx="2" fill="#5aa9ff"/>
+<text x="492" y="560" fill="#e8e6df" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GP15</text>
+<rect x="614" y="94" width="12" height="12" rx="2" fill="#ff7a7a"/>
+<text x="608" y="104" fill="#e8e6df" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >VBUS</text>
+<rect x="614" y="118" width="12" height="12" rx="2" fill="#ff7a7a"/>
+<text x="608" y="128" fill="#e8e6df" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >VSYS</text>
+<rect x="614" y="142" width="12" height="12" rx="2" fill="#3a4250"/>
+<text x="608" y="152" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >GND</text>
+<rect x="614" y="166" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="608" y="176" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >3V3_EN</text>
+<rect x="614" y="190" width="12" height="12" rx="2" fill="#ff7a7a"/>
+<text x="608" y="200" fill="#e8e6df" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >3V3</text>
+<rect x="614" y="214" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="608" y="224" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >ADC_VREF</text>
+<rect x="614" y="238" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="608" y="248" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >GP28</text>
+<text x="640" y="248" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >IR</text>
+<rect x="614" y="262" width="12" height="12" rx="2" fill="#3a4250"/>
+<text x="608" y="272" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >GND</text>
+<rect x="614" y="286" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="608" y="296" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >GP27</text>
+<text x="640" y="296" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >buzzer</text>
+<rect x="614" y="310" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="608" y="320" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >GP26</text>
+<text x="640" y="320" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >light</text>
+<rect x="614" y="334" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="608" y="344" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >RUN</text>
+<rect x="614" y="358" width="12" height="12" rx="2" fill="#5aa9ff"/>
+<text x="608" y="368" fill="#e8e6df" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >GP22</text>
+<rect x="614" y="382" width="12" height="12" rx="2" fill="#3a4250"/>
+<text x="608" y="392" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >GND</text>
+<rect x="614" y="406" width="12" height="12" rx="2" fill="#3fd69a"/>
+<text x="608" y="416" fill="#e8e6df" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >GP21</text>
+<rect x="614" y="430" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="608" y="440" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >GP20</text>
+<text x="640" y="440" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >D</text>
+<rect x="614" y="454" width="12" height="12" rx="2" fill="#3fd69a"/>
+<text x="608" y="464" fill="#e8e6df" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >GP19</text>
+<rect x="614" y="478" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="608" y="488" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >GP18</text>
+<text x="640" y="488" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >C</text>
+<rect x="614" y="502" width="12" height="12" rx="2" fill="#3a4250"/>
+<text x="608" y="512" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >GND</text>
+<rect x="614" y="526" width="12" height="12" rx="2" fill="#3fd69a"/>
+<text x="608" y="536" fill="#e8e6df" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >GP17</text>
+<rect x="614" y="550" width="12" height="12" rx="2" fill="#c9a24a"/>
+<text x="608" y="560" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >GP16</text>
+<text x="640" y="560" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >B</text>
+<rect x="70" y="64" width="250" height="118" rx="10" fill="#151a24" stroke="#f2b84b" stroke-width="2"/>
+<text x="84" y="88" fill="#f2b84b" font-size="15" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="650" >Pico-GPS-L76B</text>
+<text x="84" y="106" fill="#7d8595" font-size="12" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >optional · 9600 baud UART</text>
+<circle cx="320" cy="100" r="4.5" fill="#f2b84b"/>
+<text x="310" y="104" fill="#e8e6df" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >RX</text>
+<circle cx="320" cy="124" r="4.5" fill="#f2b84b"/>
+<text x="310" y="128" fill="#e8e6df" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >TX</text>
+<text x="84" y="168" fill="#ff7a7a" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >5V → VSYS · GND</text>
+<rect x="70" y="372" width="250" height="236" rx="10" fill="#151a24" stroke="#5aa9ff" stroke-width="2"/>
+<text x="84" y="396" fill="#5aa9ff" font-size="15" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="650" >MicroSD breakout</text>
+<text x="84" y="414" fill="#7d8595" font-size="12" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >SPI · FAT32 card</text>
+<circle cx="320" cy="426" r="4.5" fill="#5aa9ff"/>
+<text x="310" y="430" fill="#e8e6df" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >MOSI (DI)</text>
+<circle cx="320" cy="532" r="4.5" fill="#5aa9ff"/>
+<text x="310" y="536" fill="#e8e6df" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >SCK</text>
+<circle cx="320" cy="556" r="4.5" fill="#5aa9ff"/>
+<text x="310" y="560" fill="#e8e6df" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >MISO (DO)</text>
+<circle cx="220" cy="608" r="4.5" fill="#5aa9ff"/>
+<text x="230" y="612" fill="#e8e6df" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >CS</text>
+<text x="84" y="442" fill="#ff7a7a" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >VCC → VBUS (5 V)</text>
+<text x="84" y="460" fill="#ff7a7a" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >GND → GND</text>
+<rect x="790" y="384" width="250" height="256" rx="10" fill="#151a24" stroke="#3fd69a" stroke-width="2"/>
+<circle cx="790" cy="412" r="4.5" fill="#3fd69a"/>
+<text x="800" y="416" fill="#e8e6df" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >BCK</text>
+<text x="854" y="416" fill="#7d8595" font-size="11" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >(its GP27 pin)</text>
+<circle cx="790" cy="460" r="4.5" fill="#3fd69a"/>
+<text x="800" y="464" fill="#e8e6df" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >DIN</text>
+<text x="854" y="464" fill="#7d8595" font-size="11" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >(its GP26 pin)</text>
+<circle cx="790" cy="532" r="4.5" fill="#3fd69a"/>
+<text x="800" y="536" fill="#e8e6df" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >LRCK</text>
+<text x="854" y="536" fill="#7d8595" font-size="11" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >(its GP28 pin)</text>
+<text x="804" y="570" fill="#3fd69a" font-size="15" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="650" >Pico-Audio</text>
+<text x="804" y="588" fill="#7d8595" font-size="12" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >PCM5101A version</text>
+<text x="804" y="608" fill="#ff7a7a" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >VSYS · 3V3 · GND → same pins</text>
+<text x="804" y="626" fill="#7d8595" font-size="12" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >speaker 4 Ω / 3.5 mm jack</text>
+<path d="M400,100 L320,100" fill="none" stroke="#f2b84b" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 5"/>
+<path d="M470,100 L400,100 L400,426 L320,426" fill="none" stroke="#5aa9ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M320,124 L393,124 A7,7 0 0 1 407,124 L470,124" fill="none" stroke="#f2b84b" stroke-width="3" stroke-linecap="round"/>
+<circle cx="400" cy="100" r="5" fill="#5aa9ff"/>
+<path d="M470,532 L320,532" fill="none" stroke="#5aa9ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M470,556 L320,556" fill="none" stroke="#5aa9ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M630,364 L1070,364 L1070,660 L220,660 L220,608" fill="none" stroke="#5aa9ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M630,412 L790,412" fill="none" stroke="#3fd69a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M630,460 L790,460" fill="none" stroke="#3fd69a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M630,532 L790,532" fill="none" stroke="#3fd69a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="376" y="92" fill="#5aa9ff" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="middle" font-weight="400" >GP0 shared</text>
+<text x="1062" y="356" fill="#5aa9ff" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >SD CS</text>
+<rect x="70" y="679" width="14" height="14" rx="3" fill="#5aa9ff"/>
+<text x="90" y="691" fill="#e8e6df" font-size="12" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >SD card</text>
+<rect x="170" y="679" width="14" height="14" rx="3" fill="#f2b84b"/>
+<text x="190" y="691" fill="#e8e6df" font-size="12" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >GPS</text>
+<rect x="270" y="679" width="14" height="14" rx="3" fill="#3fd69a"/>
+<text x="290" y="691" fill="#e8e6df" font-size="12" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >Audio</text>
+<rect x="370" y="679" width="14" height="14" rx="3" fill="#ff7a7a"/>
+<text x="390" y="691" fill="#e8e6df" font-size="12" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >Power</text>
+<text x="480" y="691" fill="#7d8595" font-size="12" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >Grey labels: pins the matrix carrier board uses.</text>
+<text x="70" y="712" fill="#7d8595" font-size="12" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >Dashed: the GPS RX pin shares GP0. The firmware never sends to the GPS, so the SD traffic it sees there is harmless.</text>
+</svg>
