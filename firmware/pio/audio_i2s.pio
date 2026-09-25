@@ -1,0 +1,91 @@
+;
+; I2S master output, 16-bit stereo samples in 32-bit slots (64 BCLK per
+; frame, "64 fS"), on arbitrary pins.
+;
+; The Pico-Audio board is jumpered to non-adjacent GPIOs, so BCLK and LRCLK
+; cannot share a side-set group. Instead:
+;   side-set (1 pin) = BCLK
+;   OUT      (1 pin) = DIN
+;   SET      (1 pin) = LRCLK
+;
+; Every bit takes exactly 4 PIO cycles (2 low, 2 high) so BCLK is perfectly
+; regular. The PCM5101A has no MCLK here and locks its PLL to BCLK; 64 fS
+; keeps BCLK well above the PLL's minimum (32 fS at 22.05 kHz is only
+; 0.7 MHz). Each slot is 16 data bits (MSB first) then 16 zero bits; LRCLK
+; changes during the last bit of a slot, one BCLK before the next MSB
+; (standard I2S / Philips).
+;
+; FIFO word format: left sample in bits 31..16, right sample in bits 15..0.
+; PIO clock must be sample_rate * 64 * 4. The program uses all 32 slots.
+;
+; Before enabling the SM: x = 15, LRCLK = 0, PC = entry_point.
+;
+
+.program audio_i2s
+.side_set 1
+
+public entry_point:
+left_data:                      ; 16 data bits
+    out pins, 1         side 0
+    nop                 side 0
+    nop                 side 1
+    jmp x-- left_data   side 1
+    mov pins, null      side 0  ; pad bit 1 of 16
+    set x, 13           side 0
+    nop                 side 1
+    nop                 side 1
+left_pad:                       ; pad bits 2..15
+    mov pins, null      side 0
+    nop                 side 0
+    nop                 side 1
+    jmp x-- left_pad    side 1
+    mov pins, null      side 0  ; pad bit 16, LRCLK -> right
+    set pins, 1         side 0
+    nop                 side 1
+    set x, 15           side 1
+right_data:
+    out pins, 1         side 0
+    nop                 side 0
+    nop                 side 1
+    jmp x-- right_data  side 1
+    mov pins, null      side 0
+    set x, 13           side 0
+    nop                 side 1
+    nop                 side 1
+right_pad:
+    mov pins, null      side 0
+    nop                 side 0
+    nop                 side 1
+    jmp x-- right_pad   side 1
+    mov pins, null      side 0  ; pad bit 16, LRCLK -> left
+    set pins, 0         side 0
+    nop                 side 1
+    set x, 15           side 1
+
+% c-sdk {
+static inline void audio_i2s_program_init(PIO pio, uint sm, uint offset,
+                                          uint pin_din, uint pin_bclk,
+                                          uint pin_lrclk) {
+    pio_sm_config c = audio_i2s_program_get_default_config(offset);
+
+    sm_config_set_out_pins(&c, pin_din, 1);
+    sm_config_set_set_pins(&c, pin_lrclk, 1);
+    sm_config_set_sideset_pins(&c, pin_bclk);
+
+    /* Shift left (MSB first), autopull every 32 bits. */
+    sm_config_set_out_shift(&c, false, true, 32);
+    sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_TX);
+
+    pio_gpio_init(pio, pin_din);
+    pio_gpio_init(pio, pin_bclk);
+    pio_gpio_init(pio, pin_lrclk);
+    pio_sm_set_pindirs_with_mask(pio, sm,
+        (1u << pin_din) | (1u << pin_bclk) | (1u << pin_lrclk),
+        (1u << pin_din) | (1u << pin_bclk) | (1u << pin_lrclk));
+    pio_sm_set_pins_with_mask(pio, sm, 0,
+        (1u << pin_din) | (1u << pin_bclk) | (1u << pin_lrclk));
+
+    pio_sm_init(pio, sm, offset + audio_i2s_offset_entry_point, &c);
+    pio_sm_exec(pio, sm, pio_encode_set(pio_x, 15));
+}
+%}

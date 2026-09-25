@@ -1,0 +1,23 @@
+# Build output: regenerated on every build, contains machine-specific paths.
+# Release UF2s are attached to GitHub Releases by .github/workflows/build.yml.
+firmware/build*/
+firmware/CMakeCache.txt
+firmware/CMakeFiles/
+firmware/cmake_install.cmake
+firmware/Makefile
+firmware/_deps/
+firmware/generated/
+firmware/elf2uf2/
+firmware/pioasm/
+firmware/pico-sdk/
+*.uf2
+*.elf
+*.elf.map
+*.bin
+*.hex
+*.dis
+*.a
+
+# Local only
+.backup/
+Hardware Docs/

@@ -1,0 +1,89 @@
+# Builds the firmware on every push and pull request.
+# Pushing a tag like v1.0 also publishes a GitHub Release with the UF2.
+name: Build firmware
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write   # needed to create the release
+
+env:
+  PICO_SDK_VERSION: 1.5.1   # keep in sync with sdkVersion in firmware/CMakeLists.txt
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04   # ships arm-none-eabi-gcc 13.2, the same as the Pico VS Code toolchain
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            cmake ninja-build gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
+
+      - name: Cache Pico SDK
+        id: sdk-cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/pico-sdk
+          key: pico-sdk-${{ env.PICO_SDK_VERSION }}
+
+      - name: Fetch Pico SDK
+        if: steps.sdk-cache.outputs.cache-hit != 'true'
+        run: |
+          git clone --depth 1 --branch "$PICO_SDK_VERSION" \
+            --recurse-submodules --shallow-submodules \
+            https://github.com/raspberrypi/pico-sdk.git "$RUNNER_TEMP/pico-sdk"
+
+      - name: Build
+        env:
+          PICO_SDK_PATH: ${{ runner.temp }}/pico-sdk
+        run: |
+          cmake -S firmware -B firmware/build -G Ninja
+          cmake --build firmware/build --target adhan_clock
+
+      - name: Name the UF2
+        id: name
+        run: |
+          if [[ "$GITHUB_REF_TYPE" == tag ]]; then version="$GITHUB_REF_NAME"; else version="${GITHUB_SHA::7}"; fi
+          file="adhan_clock-$version.uf2"
+          cp firmware/build/adhan_clock.uf2 "$file"
+          echo "file=$file" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.name.outputs.file }}
+          path: |
+            ${{ steps.name.outputs.file }}
+            THIRD_PARTY_NOTICES.md
+
+      - name: Publish release
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FILE: ${{ steps.name.outputs.file }}
+        run: |
+          # Release notes: flashing steps, then the pins this UF2 was built for,
+          # read from config.h so they can't go stale.
+          {
+            sed -e "s|{{REPO_URL}}|$GITHUB_SERVER_URL/$GITHUB_REPOSITORY|" -e "s|{{TAG}}|$GITHUB_REF_NAME|" \
+              .github/release-notes.md
+            echo
+            echo "| Setting | GPIO |"
+            echo "|---|---|"
+            awk '$1 == "#define" && $2 ~ /^PIN_/ && $3 ~ /^[0-9]+$/ && $3 != 255 { print "| `" $2 "` | " $3 " |" }' \
+              firmware/include/config.h
+          } > notes.md
+
+          if gh release view "$GITHUB_REF_NAME" > /dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" "$FILE" THIRD_PARTY_NOTICES.md --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" "$FILE" THIRD_PARTY_NOTICES.md \
+              --title "$GITHUB_REF_NAME" --notes-file notes.md --generate-notes
+          fi
