@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" width="1100" height="720" role="img" aria-labelledby="t d">
 <title id="t">Adhan Clock wiring</title>
-<desc id="d">Raspberry Pi Pico pinout. SD card: MOSI GP0, SCK GP14, MISO GP15, CS GP22, power from VBUS. GPS: TX to GP1, RX shares GP0. Pico-Audio: DIN GP19, BCK GP21, LRCK GP17, power from VSYS and 3V3. All other pins are used by the matrix carrier board.</desc>
+<desc id="d">Raspberry Pi Pico pinout. SD card: MOSI GP0, SCK GP14, MISO GP15, CS GP22, power from VBUS. GPS, plugged into the carrier board's spare header: TX to GP1, RX shares GP0. Pico-Audio: DIN GP19, BCK GP21, LRCK GP17, power from VSYS and 3V3. All other pins are used by the matrix carrier board.</desc>
 <rect x="525" y="58" width="50" height="22" rx="4" fill="#9aa3ad"/>
 <rect x="470" y="72" width="160" height="512" rx="8" fill="#17613f"/>
 <text x="550.0" y="50" fill="#7d8595" font-size="11" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="middle" font-weight="400" >USB</text>
@@ -106,12 +106,13 @@
 <text x="640" y="560" fill="#7d8595" font-size="11" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >B</text>
 <rect x="70" y="64" width="250" height="118" rx="10" fill="#151a24" stroke="#f2b84b" stroke-width="2"/>
 <text x="84" y="88" fill="#f2b84b" font-size="15" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="650" >Pico-GPS-L76B</text>
-<text x="84" y="106" fill="#7d8595" font-size="12" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >optional · 9600 baud UART</text>
+<text x="84" y="106" fill="#7d8595" font-size="12" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >optional · plugs into the carrier</text>
 <circle cx="320" cy="100" r="4.5" fill="#f2b84b"/>
 <text x="310" y="104" fill="#e8e6df" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >RX</text>
 <circle cx="320" cy="124" r="4.5" fill="#f2b84b"/>
 <text x="310" y="128" fill="#e8e6df" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="end" font-weight="400" >TX</text>
-<text x="84" y="168" fill="#ff7a7a" font-size="12" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="start" font-weight="400" >5V → VSYS · GND</text>
+<text x="84" y="148" fill="#7d8595" font-size="12" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >No wires: the carrier's spare</text>
+<text x="84" y="166" fill="#7d8595" font-size="12" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >Pico header makes these links</text>
 <rect x="70" y="372" width="250" height="236" rx="10" fill="#151a24" stroke="#5aa9ff" stroke-width="2"/>
 <text x="84" y="396" fill="#5aa9ff" font-size="15" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="650" >MicroSD breakout</text>
 <text x="84" y="414" fill="#7d8595" font-size="12" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" text-anchor="start" font-weight="400" >SPI · FAT32 card</text>

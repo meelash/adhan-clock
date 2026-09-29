@@ -224,8 +224,8 @@
       <div class="panel" aria-label="The clock's home screen, rotating between three pages">
         <div class="screen" id="hero-screen">
           <img class="on" src="screens/home-morning.png" alt="Clock page: 08:17, Hijri date 12 Rabi' II 1448, and 'Dhuhr -4:32' until the next prayer, in the gold morning colors." width="640" height="320">
-          <img src="screens/home-morning-p2.png" alt="Prayer times page 1: Fajr 05:31 and Sunrise 06:47 dimmed as past, Dhuhr 12:49 highlighted in gold as next." width="640" height="320" loading="lazy">
-          <img src="screens/home-morning-p3.png" alt="Prayer times page 2: Asr 16:10, Maghrib 18:48, Isha 20:03." width="640" height="320" loading="lazy">
+          <img src="screens/home-morning-p2.png" alt="Prayer times page 1: Fajr 05:15 and Sunrise 06:47 dimmed as past, Dhuhr 12:49 highlighted in gold as next." width="640" height="320" loading="lazy">
+          <img src="screens/home-morning-p3.png" alt="Prayer times page 2: Asr 17:01, Maghrib 18:48, Isha 20:19." width="640" height="320" loading="lazy">
         </div>
         <div class="panel-caption">
           <span>Rotates every 5 seconds, like the real clock</span>
@@ -303,7 +303,7 @@
   <section id="screens" class="alt">
     <div class="wrap">
       <h2>Screens</h2>
-      <p class="section-lede">These are rendered from the firmware's own drawing code, pixel for pixel, for a sample day in New York (ISNA method). <a href="https://github.com/meelash/adhan-clock/tree/master/tools/screenshots">How they're made</a>.</p>
+      <p class="section-lede">These are rendered from the firmware's own drawing code, pixel for pixel, for a sample day in New York (Karachi method, Hanafi Asr). <a href="https://github.com/meelash/adhan-clock/tree/master/tools/screenshots">How they're made</a>.</p>
 
       <div class="gallery-group">
         <h3>Prayer time</h3>
@@ -318,7 +318,7 @@
         <h3>Settings</h3>
         <div class="gallery">
           <figure class="shot"><img src="screens/menu.png" alt="Settings menu with Calc Method selected" width="640" height="320" loading="lazy"><figcaption><b>Settings menu</b>14 entries. Press 5 to open, 2 and 8 to move, CH- to go back.</figcaption></figure>
-          <figure class="shot"><img src="screens/calc-method.png" alt="Calculation method list with ISNA selected" width="640" height="320" loading="lazy"><figcaption><b>Calculation method</b>Pick from 12 methods.</figcaption></figure>
+          <figure class="shot"><img src="screens/calc-method.png" alt="Calculation method list with Karachi selected" width="640" height="320" loading="lazy"><figcaption><b>Calculation method</b>Pick from 12 methods.</figcaption></figure>
           <figure class="shot"><img src="screens/adjustments.png" alt="Adjustments: Maghrib +3m" width="640" height="320" loading="lazy"><figcaption><b>Adjustments</b>Nudge each prayer by whole minutes to match your masjid.</figcaption></figure>
           <figure class="shot"><img src="screens/adhan-file.png" alt="Adhan file chooser showing makkah.wav, 1 of 4, selected" width="640" height="320" loading="lazy"><figcaption><b>Adhan file</b>Choose from the WAV files in <code>/adhan</code> on the card.</figcaption></figure>
           <figure class="shot"><img src="screens/set-time.png" alt="Set time: 2026-09-25 14:42 with the hour field highlighted" width="640" height="320" loading="lazy"><figcaption><b>Set time</b>Only needed without GPS, or if the RTC battery died.</figcaption></figure>
@@ -327,7 +327,7 @@
           <figure class="shot"><img src="screens/brightness.png" alt="Brightness: AUTO" width="640" height="320" loading="lazy"><figcaption><b>Brightness</b>Auto uses the light sensor, or pick 1 to 16.</figcaption></figure>
           <figure class="shot"><img src="screens/timezone.png" alt="Timezone UTC-5:00 (standard)" width="640" height="320" loading="lazy"><figcaption><b>Time zone</b>Your standard (winter) offset from UTC.</figcaption></figure>
           <figure class="shot"><img src="screens/dst.png" alt="DST: Auto US, now +1h" width="640" height="320" loading="lazy"><figcaption><b>Daylight saving</b>Off, on, or automatic on US or EU rules.</figcaption></figure>
-          <figure class="shot"><img src="screens/asr-method.png" alt="Asr method: Standard" width="640" height="320" loading="lazy"><figcaption><b>Asr method</b>Standard or Hanafi.</figcaption></figure>
+          <figure class="shot"><img src="screens/asr-method.png" alt="Asr method: Hanafi" width="640" height="320" loading="lazy"><figcaption><b>Asr method</b>Standard or Hanafi.</figcaption></figure>
           <figure class="shot"><img src="screens/key-beep.png" alt="Key beep: On" width="640" height="320" loading="lazy"><figcaption><b>Key beep</b>A click from the buzzer on each remote key press.</figcaption></figure>
         </div>
       </div>
@@ -425,6 +425,7 @@
             <ul>
               <li>GPS, BeiDou and QZSS, &lt; 2.5 m accuracy, UART at 9600 baud</li>
               <li>Holder for an ML1220 cell to speed up later fixes</li>
+              <li>Plugs straight into the spare Pico header on the matrix board. No wiring needed</li>
               <li>Without it, set your coordinates in <code>settings.txt</code> and the time from the remote</li>
             </ul>
           </div>
@@ -450,10 +451,10 @@
   <section id="wiring" class="alt">
     <div class="wrap">
       <h2>Wiring</h2>
-      <p class="section-lede">The Pico plugs into the matrix carrier board, which uses most of its pins. The SD breakout and Pico-Audio are wired to the few pins left, and some of those are shared with the carrier's buttons.</p>
+      <p class="section-lede">The Pico and the optional GPS both plug into headers on the matrix carrier board, which uses most of the Pico's pins. Only the SD breakout and Pico-Audio need jumper wires, to the few pins left. Some of those pins are shared with the carrier's buttons.</p>
 
       <div class="diagram">
-        <img src="img/wiring.svg" alt="Wiring diagram. SD breakout: MOSI to GP0, SCK to GP14, MISO to GP15, CS to GP22, VCC to VBUS. GPS: TX to GP1, RX on GP0. Pico-Audio: BCK to GP21, DIN to GP19, LRCK to GP17, power from VSYS and 3V3. The tables below list the same connections." width="1100" height="720">
+        <img src="img/wiring.svg" alt="Wiring diagram. SD breakout: MOSI to GP0, SCK to GP14, MISO to GP15, CS to GP22, VCC to VBUS. GPS, plugged into the carrier's spare header: TX on GP1, RX on GP0. Pico-Audio: BCK to GP21, DIN to GP19, LRCK to GP17, power from VSYS and 3V3. The tables below list the same connections." width="1100" height="720">
       </div>
 
       <div class="tables">
@@ -486,7 +487,8 @@
           </table>
         </div>
         <div class="tcard">
-          <h3><span class="dot" style="background:var(--gold)"></span>GPS (optional)</h3>
+          <h3><span class="dot" style="background:var(--gold)"></span>GPS (optional, plugs in)</h3>
+          <p style="margin:0 0 8px;color:var(--ink-2);font-size:.9rem">Plug it into the carrier board's spare Pico header. The header makes these connections for you.</p>
           <table>
             <thead><tr><th>GPS</th><th>Pico</th><th>Pin #</th></tr></thead>
             <tbody>
@@ -541,8 +543,8 @@ timezone = -5
 dst = us
 
 <span class="c"># --- Prayer calculation ---</span>
-method = isna
-asr = standard
+method = karachi
+asr = hanafi
 
 <span class="c"># --- Adhan audio (files in the /adhan folder) ---</span>
 adhan = makkah.wav

@@ -44,7 +44,7 @@ static void save(const char *name) {
     printf("%s\n", name);
 }
 
-/* ── Sample day: New York, ISNA, US DST (in effect on this date) ────────── */
+/* ── Sample day: New York, Karachi method, Hanafi Asr, US DST in effect ── */
 static prayer_day_t day;
 static hijri_date_t hijri_base;
 
@@ -71,8 +71,8 @@ int main(int argc, char **argv) {
 
     prayer_config_t cfg;
     prayer_config_defaults(&cfg);
-    cfg.method     = CALC_ISNA;
-    cfg.asr_method = ASR_STANDARD;
+    cfg.method     = CALC_KARACHI;
+    cfg.asr_method = ASR_HANAFI;
     cfg.latitude   = 40.7128;
     cfg.longitude  = -74.0060;
     cfg.timezone   = -4.0;          /* EST + DST */
@@ -109,8 +109,8 @@ int main(int argc, char **argv) {
 
     rtc_time_t st = { .minute = 42, .hour = 14, .day = 25, .month = 9, .year = 2026 };
     screen_render_set_time(&st, 3, true);                 save("set-time");
-    screen_render_calc_method(CALC_ISNA);                  save("calc-method");
-    screen_render_asr_method(ASR_STANDARD);                save("asr-method");
+    screen_render_calc_method(CALC_KARACHI);                 save("calc-method");
+    screen_render_asr_method(ASR_HANAFI);                  save("asr-method");
     int adj[PRAYER_COUNT] = { 0, 0, 2, 0, 3, 0 };
     screen_render_adjustments(adj, PRAYER_MAGHRIB);        save("adjustments");
     screen_render_hijri_adj(0, &hijri_base);               save("hijri-adj");

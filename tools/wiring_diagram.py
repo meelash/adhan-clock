@@ -72,7 +72,7 @@ add(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" 
     f'role="img" aria-labelledby="t d">')
 add('<title id="t">Adhan Clock wiring</title>')
 add('<desc id="d">Raspberry Pi Pico pinout. SD card: MOSI GP0, SCK GP14, MISO GP15, CS GP22, '
-    'power from VBUS. GPS: TX to GP1, RX shares GP0. Pico-Audio: DIN GP19, BCK GP21, LRCK GP17, '
+    'power from VBUS. GPS, plugged into the carrier board\'s spare header: TX to GP1, RX shares GP0. Pico-Audio: DIN GP19, BCK GP21, LRCK GP17, '
     'power from VSYS and 3V3. All other pins are used by the matrix carrier board.</desc>')
 
 # ── Pico board ──
@@ -104,10 +104,11 @@ for j, name in enumerate(RIGHT):
 
 # ── GPS (top left) ──
 gx, gy, gw, gh = 70, 64, 250, 118
-module(gx, gy, gw, gh, "Pico-GPS-L76B", "optional · 9600 baud UART", GPS)
+module(gx, gy, gw, gh, "Pico-GPS-L76B", "optional · plugs into the carrier", GPS)
 module_pin(gx + gw, ly(0), "RX", GPS)
 module_pin(gx + gw, ly(1), "TX", GPS)
-text(gx + 14, gy + gh - 14, "5V → VSYS · GND", PWR, 12, family="mono")
+text(gx + 14, gy + gh - 34, "No wires: the carrier's spare", DIM, 12)
+text(gx + 14, gy + gh - 16, "Pico header makes these links", DIM, 12)
 
 # ── SD card (bottom left) ──
 sx, sy, sw, sh = 70, 372, 250, 236
